@@ -163,6 +163,15 @@ header .logo {
 	transition: background-color 0.3s ease;
 }
 
+.search-fields input[type="date"] {
+	padding: 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 999px;
+	min-width: 200px;
+	font-size: 0.95rem;
+}
+
+
 .search-fields button:hover {
 	background-color: #1597c0;
 }

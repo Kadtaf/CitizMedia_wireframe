@@ -1,7 +1,3 @@
-document.getElementById("menu-toggle").addEventListener("click", function () {
-  const navMenu = document.getElementById("main-menu");
-  navMenu.classList.toggle("open");
-});
 
 function getSaisonCoefficient(month) {
   if ([6, 7, 8].includes(month)) return 1.5; // Été
@@ -28,9 +24,9 @@ function calculerPrix() {
   const ville = document.querySelector("input[placeholder='Ville ou Code postal']").value;
   const duree = document.querySelector("select:nth-of-type(1)").value;
   const surfaceType = document.querySelector("select:nth-of-type(2)").value;
-  const surfaceInput = document.querySelector("input[placeholder*='surface']").value;
+  const startDateInput = document.getElementById("start-date").value;
 
-  if (!ville || !duree || (!surfaceType && !surfaceInput)) {
+  if (!ville || !duree || !surfaceType || !startDateInput) {
     document.querySelector("#prix-estime strong").textContent = "-- €";
     return;
   }
@@ -46,20 +42,25 @@ function calculerPrix() {
     default: weeks = 1;
   }
 
-  const now = new Date();
-  const month = now.getMonth() + 1;
+  
+  const dateStart = new Date(startDateInput);
+  const month = dateStart.getMonth() + 1;
+
   const coefSaison = getSaisonCoefficient(month);
   const coefZone = getZoneCoefficient(ville);
-  const coefSurface = getSurfaceCoefficient(surfaceInput || surfaceType.replace("m2", ""));
+  const coefSurface = getSurfaceCoefficient(surfaceType.replace("m2", ""));
 
   const prix = Math.round(base * weeks * coefSaison * coefZone * coefSurface);
 
   document.querySelector("#prix-estime strong").textContent = `${prix} €`;
 }
 
-// Recalcul au changement de champ
 document.querySelectorAll(".search-fields input, .search-fields select").forEach(el => {
   el.addEventListener("input", calculerPrix);
 });
 
+document.getElementById("menu-toggle").addEventListener("click", function () {
+  const navMenu = document.getElementById("main-menu");
+  navMenu.classList.toggle("open");
+});
 
