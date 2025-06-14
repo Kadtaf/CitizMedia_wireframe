@@ -11,10 +11,10 @@
 
     <header>
         <a href="#" class="logo">
-        <img src="asset/logo_Citiz.webp" alt="Logo Citiz Media">
+        <img src="asset/logo_Citiz.webp" loading="lazy" alt="Logo Citiz Media">
         </a>
         
-        <nav>
+        <nav class="main-nav">
         <ul id="main-menu">
             <li><a href="#">Accueil</a></li>
             <li><a href="#">Trouver un panneau</a></li>
@@ -63,18 +63,34 @@
 
         <section class="search-bar">
             <h3>Rechercher un panneau</h3>
-            <div>
+            <div class="search-fields">
+
                 <input type="text" placeholder="Ville ou Code postal">
-                <input type="text" placeholder="Durée">
-                <input type="text" placeholder="type de panneau">
-                <input type="text" placeholder="Budget">
+
+                <select>
+                <option value="">Durée</option>
+                <option value="1semaine">1 semaine</option>
+                <option value="1mois">1 mois</option>
+                <option value="3mois">3 mois</option>
+                <option value="6mois">6 mois</option>
+                <option value="1an">1 an</option>
+                </select>
+
+                <select>
+                <option value="">Type de panneau en m² </option>
+                <option value="2m2">2 m²</option>
+                <option value="4m2">4 m²</option>
+                <option value="6m2">6 m²</option>
+                </select>
+
+                
+
+                <p id="prix-estime">Prix estimé : <strong>-- €</strong></p>
+
                 <button class="search">🔎 Rechercher</button>
             </div>
-            
-                
-            
-            
         </section>
+
 
         <section class="advantages">
         <h2>Pourquoi choisir Citiz Media ?</h2>
@@ -101,15 +117,56 @@
         </section>
 
         <section class="cta-buttons">
-            <button>Lancer une campagne</button>
-            <button>Parler à un conseiller !</button>
+            <div>
+                <button class="btn-primary">Lancer une campagne</button>
+            </div>
+            <div>
+                <button class="btn-secondary">Parler à un conseiller !</button>
+            </div>           
         </section>
     </main>
 
-    <footer>
-        <p>© 2025 Citiz Media | Mentions légales | Politique de confidentialité | CGV</p>
-        <p>Contact : contact@cityzmedia.fr</p>
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="logo-footer">
+            <a href="#"><img src="asset/Cityz_logo.webp" loading="lazy" alt="Logo Citiz Media"></a>
+            </div>
+
+            <div class="newsletter">
+                <h2>Inscrivez-vous à la newsletter Cityz Media</h2>
+                <form>
+                    <label for="email">Adresse e-mail</label>
+                    <div class="newsletter-input">
+                    <input type="email" id="email" placeholder="Votre adresse e-mail" required>
+                    <button type="submit">S'inscrire</button>
+                    </div>
+                    <p class="privacy-text">
+                    Les données personnelles renseignées dans ce formulaire sont traitées par Cityz Media dans le cadre de mesures précontractuelles, conformément à notre politique de confidentialité.
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-links">
+                <p>©2025 Cityz</p>
+                <a href="#">Mentions légales</a>
+                <a href="#">CGV</a>
+                <a href="#">CGA</a>
+                <a href="#">Politiques de confidentialité</a>
+                <a href="#">Signalement</a>
+            </div>
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
     </footer>
+
 
     <script src="js/scrypt.js"></script>
 </body>
