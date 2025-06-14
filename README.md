@@ -27,7 +27,7 @@ citiz-wireframe/
 │   └── scrypt.js      # Script JavaScript pour menu mobile et calcul dynamique
 └── asset/
       └──logo_Citiz.webp # Logo de la marque situé dans le header
-      └── Citiz_logo.webp  # Logo de la marque situé dans le footer
+      └── Cityz_logo.webp  # Logo de la marque situé dans le footer
 ```
 
 ---
