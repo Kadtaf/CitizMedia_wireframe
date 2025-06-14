@@ -1,5 +1,5 @@
 
-# Citiz Media – Prototype Wireframe de la Page d’Accueil
+# Cityz Media – Prototype Wireframe de la Page d’Accueil
 
 Ce projet est un prototype HTML/CSS/JS de la **page d’accueil du site web Cityz Media**, dans le cadre de la conception d’une solution digitale destinée à permettre aux TPE/PME de réserver en ligne des espaces publicitaires physiques (panneaux).
 
